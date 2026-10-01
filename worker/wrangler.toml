@@ -1,0 +1,26 @@
+name = "server-side-tracking"
+main = "src/index.js"
+compatibility_date = "2024-09-23"
+# account_id = "<SEU_ACCOUNT_ID>"   # ou use a variável CLOUDFLARE_ACCOUNT_ID
+workers_dev = true
+
+# Opcional: rodar no seu próprio domínio (first-party), ex. site.com.br/track/*
+# routes = [
+#   { pattern = "seudominio.com.br/track/*", zone_name = "seudominio.com.br" }
+# ]
+
+[vars]
+SITE_URL = "https://seudominio.com.br"
+PRODUCT_NAME = "Meu Produto"
+PRODUCT_ID = "meu-produto"
+CURRENCY = "BRL"
+PHONE_COUNTRY_CODE = "55"
+SUPABASE_TABLE = "site_tracking_events"
+ALLOWED_ORIGIN = "https://seudominio.com.br"
+# META_TEST_EVENT_CODE = "TEST12345"   # só durante a validação
+
+# Segredos (NUNCA no arquivo) — configure com `wrangler secret put <NOME>`:
+#   META_PIXEL_ID, META_CAPI_TOKEN
+#   GA4_MEASUREMENT_ID, GA4_API_SECRET
+#   SUPABASE_URL, SUPABASE_SERVICE_KEY
+#   WEBHOOK_TOKEN   (hottok da Hotmart ou token próprio)

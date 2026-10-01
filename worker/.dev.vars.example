@@ -1,0 +1,8 @@
+# Copie para .dev.vars para rodar `wrangler dev` localmente. Nunca faça commit do .dev.vars.
+META_PIXEL_ID=
+META_CAPI_TOKEN=
+GA4_MEASUREMENT_ID=
+GA4_API_SECRET=
+SUPABASE_URL=
+SUPABASE_SERVICE_KEY=
+WEBHOOK_TOKEN=
