@@ -172,7 +172,9 @@ async function processEvent(body, cfg, env, request) {
   })
 
   // 2. GA4 Measurement Protocol
-  await sendGa4(env, {
+  // page_view não vai pelo servidor: o gtag do navegador já registra (mesmo client_id),
+  // e enviar dos dois lados duplicava as visualizações de página no GA4.
+  if (ga4EventName !== 'page_view') await sendGa4(env, {
     client_id: ga_client_id || `${timestamp}.${crypto.getRandomValues(new Uint32Array(1))[0]}`,
     events: [{
       name: ga4EventName,
